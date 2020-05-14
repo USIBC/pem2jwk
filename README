@@ -3,7 +3,33 @@
  D. Racine 20200506
 +----------------------------+
 
-usage:
+Dependencies:
 
-java -jar PrivatePemToJwk.jar private_key_pem_file >private.jwk
+  pem2jwk -> fusionauth-jwt -> jackson
 
+
+Building:
+
+  1. Place dependency jars in lib/, for example:
+
+     pem2jwk
+     ├── build.sh
+     ├── clean.sh
+     ├── lib
+     │   ├── fusionauth-jwt-3.2.0.jar
+     │   ├── jackson-annotations-2.11.0.jar
+     │   ├── jackson-core-2.11.0.jar
+     │   └── jackson-databind-2.11.0.jar
+     ├── manifest
+     ├── README
+     └── src
+         └── ibc
+             └── pem2jwk
+                 └── PrivatePemToJwk.java
+
+  2. sh build.sh
+
+
+Usage:
+
+  java -jar PrivatePemToJwk.jar private_key_pem_file >private.jwk

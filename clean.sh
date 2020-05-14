@@ -1,2 +1,2 @@
 #!/bin/sh
-rm -rf classes/ibc PrivatePemToJwk.jar
+rm -rf classes PrivatePemToJwk.jar
