@@ -1,0 +1,9 @@
++----------------------------+
+ ibc.pem2jwk.PrivatePemToJwk
+ D. Racine 20200506
++----------------------------+
+
+usage:
+
+java -jar PrivatePemToJwk.jar private_key_pem_file >private.jwk
+
