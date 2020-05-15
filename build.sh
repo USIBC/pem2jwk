@@ -1,8 +1,10 @@
 #!/bin/sh
 
-CLASS="PrivatePemToJwk"
+CLASSPATH="lib/*"
 
-CLASSPATH="./lib/*"
+SRCPATH="src/ibc/pem2jwk/"
 
-javac -cp "$CLASSPATH" -d classes src/ibc/pem2jwk/"$CLASS".java && \
-jar cvfm PrivatePemToJwk.jar manifest -C classes ibc
+CLASS="PemToJwk"
+
+javac -cp "$CLASSPATH" -d classes "$SRCPATH$CLASS".java && \
+jar cvfm "$CLASS".jar manifest -C classes ibc

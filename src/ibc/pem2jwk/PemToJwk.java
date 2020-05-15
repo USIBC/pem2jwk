@@ -17,34 +17,22 @@ import java.nio.charset.*;
 import java.nio.file.*;
 import java.io.*;
 
-
-public class PrivatePemToJwk {
+public class PemToJwk {
 
   static String readFile(String path, Charset encoding) throws IOException {
     byte[] encoded = Files.readAllBytes(Paths.get(path));
-    return new String(encoded, encoding);
-  }
+    return new String(encoded, encoding); }
 
   public static void main(String[] args) {
-
-    String privateKeyFile = "";
-
+    String pemFile = "";
     if (args.length > 0) {
-      privateKeyFile = args[0];
-    }
+      pemFile = args[0]; }
     else {
-      System.err.println("usage: java -jar PrivatePemToJwk.jar private_key_pem_file");
-      System.exit(1);
-    }
-
+      System.err.println("usage: java -jar PemToJwk.jar pem_file");
+      System.exit(1); }
     try {
-      String privateKey = readFile(privateKeyFile, StandardCharsets.US_ASCII);
-      JSONWebKey jwk = JSONWebKey.build(privateKey);
-      String json = jwk.toJSON();
-      System.out.println(json);
-    }
+      String pem = readFile(pemFile, StandardCharsets.US_ASCII);
+      JSONWebKey jwk = JSONWebKey.build(pem);
+      System.out.println(jwk.toJSON()); }
     catch(IOException e) {
-      e.printStackTrace();
-    }
-  }
-}
+      e.printStackTrace(); }}}

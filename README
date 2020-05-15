@@ -1,5 +1,5 @@
 +----------------------------+
- ibc.pem2jwk.PrivatePemToJwk
+ ibc.pem2jwk.PemToJwk
  D. Racine 20200506
 +----------------------------+
 
@@ -25,11 +25,11 @@ Building:
      └── src
          └── ibc
              └── pem2jwk
-                 └── PrivatePemToJwk.java
+                 └── PemToJwk.java
 
   2. sh build.sh
 
 
 Usage:
 
-  java -jar PrivatePemToJwk.jar private_key_pem_file >private.jwk
+  java -jar PemToJwk.jar pem_file >key.jwk
